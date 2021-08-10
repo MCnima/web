@@ -12,7 +12,10 @@ def web_scraping():
         if website_status == 200:
             print('Getting proxies\nPlease wait!')
             time.sleep(2)
-            print(websites_text)
+            with open('data.txt', 'wb') as data:
+                data.write(websites_text)
+                data.close()
+            print('Done!')
         else:
             print('We are experiencing some sort of problem to get to website.Be sure of:\n'
                   '1.Your internet is on and your internet connections quality is good'
